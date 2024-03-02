@@ -1,8 +1,7 @@
 import { useState } from "react"
 
 export default function Form(){
-    const[value,setValue] = useState("hiKi");
-
+    const[value, setValue] = useState("");
     let handler = (evt) => {
     setValue(evt.target.value);
     }
