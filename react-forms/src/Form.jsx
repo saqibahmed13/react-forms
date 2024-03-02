@@ -8,7 +8,8 @@ export default function Form(){
     }
     return(
         <div>
-        <input type="text" value={value} onChange={handler} />
+        <label htmlFor="connect"></label>
+        <input type="text" id="connect" value={value} onChange={handler} />
         <button>Submit</button>
         </div>
     )
