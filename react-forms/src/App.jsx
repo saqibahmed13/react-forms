@@ -1,4 +1,6 @@
-import Form from "./Form"
+import Form from "./Form.jsx"
+import CommentsForm from "./CommentsForm.jsx"
+import Counter from "./Counter.jsx"
 
 function App() {
   
@@ -6,7 +8,9 @@ function App() {
   return (
     <>
       <div>
-      <Form/>
+      {/* <Form/> */}
+      {/* <CommentsForm/> */}
+      <Counter/>
      </div>
     </>
   )

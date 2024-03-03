@@ -7,21 +7,29 @@ export default function Form(){
         password:""
     });
 
-    let multipleInputHandler = (evt) => {
-        let fieldName = evt.target.name;
-        let newVal = evt.target.value;
+    // let multipleInputHandler = (evt) => {
+    //     let fieldName = evt.target.name;
+    //     let newVal = evt.target.value;
 
-    setformData((currData)=>{
-        currData[fieldName] = newVal
-        return{...currData}         // we donot know which fieldset it is so we use [ brackets]  
+    //     setformData((currData)=>{
+    //     currData[fieldName] = newVal
+    //     return{...currData}         // we donot know which fieldset it is so we use [ brackets]  
         
-        //or 
+    //     //or 
 
-        // currData[fieldName] = newVal
-        // return{...currData , [evt.target.name] : evt.target.value } 
+    //     // currData[fieldName] = newVal
+    //     // return{...currData , [evt.target.name] : evt.target.value } 
 
-    });
+    // });
+    // }
+
+    let multipleInputHandler = (evt) => {
+    
+        setformData((currData) => {
+        return {...currData , [evt.target.name] : evt.target.value }
+        })
     }
+    
 
     let handlerSubmit = (event)=>{
         event.preventDefault();
@@ -35,22 +43,20 @@ export default function Form(){
       }
 
     return(
-        <div>
         <form onSubmit={handlerSubmit}>
         <label htmlFor="connect">FullName: </label>
-         <input type="text"  placeholder="Enter Fullname" id="connect" value={formData.fullName} onChange={multipleInputHandler} name="fullName"/>  
+         <input type="text"  placeholder="Enter Fullname" id="connect" name="fullName" value={formData.fullName} onChange={multipleInputHandler} />  
          {/* this name [name:"fullName"] should be same as useState key to access and match */}
         <br />
         <br />
-        <label htmlFor="connect">UserName: </label>
-        <input type="text" id="connect"  placeholder="Enter Username" value={formData.userName} onChange={multipleInputHandler} name="userName" />
+        <label htmlFor="connects">UserName: </label>
+        <input type="text" id="connects"  placeholder="Enter Username"  name="userName" value={formData.userName} onChange={multipleInputHandler}/>
         {/* this name [name:"userName] should be same as useState key to access and match */}
         <br />
         <br />
-        <label htmlFor="connect">password: </label>
-        <input type="text" id="connect"  placeholder="Enter password" value={formData.password} onChange={multipleInputHandler} name="password" />
+        <label htmlFor="connectss">password: </label>
+        <input type="text" id="connectss"  placeholder="Enter password"  name="password"  value={formData.password} onChange={multipleInputHandler} />
         <button>Submit</button>
         </form>
-        </div>
     )
 }
