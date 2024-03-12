@@ -2,6 +2,7 @@ import Form from "./Form.jsx"
 import CommentsForm from "./CommentsForm.jsx"
 import Counter from "./Counter.jsx"
 import Joker from "./Joker.jsx"
+import ChatbotFlowBuilder from "./Chat.jsx"
 function App() {
   
 
@@ -11,7 +12,8 @@ function App() {
       {/* <Form/> */}
       {/* <CommentsForm/> */}
       {/* <Counter/> */}
-      <Joker/>
+      {/* <Joker/> */}
+      <ChatbotFlowBuilder/>
      </div>
     </>
   )
